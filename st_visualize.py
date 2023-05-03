@@ -52,4 +52,9 @@ st.title('Brame Van Shopping')
 
 st.plotly_chart(px_chart)
 
+st.write("Add Vans in Google Sheets [Here](https://docs.google.com/spreadsheets/d/11V_hq6igSe-2y80GmlSewMl2aGfV5xftRcvEBvxTLlE/edit?usp=sharing)")
+
+
+
+
 st.table(df)
