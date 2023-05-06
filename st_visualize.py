@@ -42,7 +42,7 @@ def read_sheet():
 df = read_sheet()
 df['symbol'] = df['Accident'].apply(lambda a:'circle-x' if a=='x' else 'circle')
 px_chart = px.scatter(df, x='Wear', y='Price', trendline='ols', height=500, hover_name='CarNo', hover_data=['Notes', 'Price', 'Mileage', 'Year'], color='CarNo',
-           color_continuous_scale=px.colors.sequential.Bluered, text='CarNo') #, symbol='symbol'
+           color_continuous_scale=px.colors.sequential.Bluered, text='CarNo', symbol='symbol') #, 
 px_chart.update_traces(textposition='top center')
            
            
