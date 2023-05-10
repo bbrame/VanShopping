@@ -41,13 +41,13 @@ def read_sheet():
 
 df = read_sheet()
 df['symbol'] = df['Accident'].apply(lambda a:'circle-x' if a=='x' else 'circle')
-df['color'] = df['Status'].apply(lambda s: 'None' if pd.isna(s) else s).map({'None': 1, 'NO': 0, 'SOLD': 0.5})
+df['color'] = df['Status'].apply(lambda s: 'None' if pd.isna(s) else s).map({'None': 1, 'NO': 0, 'EXPENSIVE': 0, 'SOLD': 0.5})
 fig = px.scatter(df, x='Wear', y='Price', trendline='ols', height=500, hover_name='CarNo', hover_data=['Notes', 'Price', 'Mileage', 'Year'], 
           text='CarNo', symbol='symbol', color='color', color_continuous_scale=px.colors.sequential.Bluered
 ) #,  , color='CarNo'
 #color_discrete_map = {'None': 'blue', 'NO': 'red', 'SOLD': 'gray'}
 fig.update_traces(textposition='top center')
-           
+     
            
 #range_color=[1, ]
 #dir(px.colors.sequential)
