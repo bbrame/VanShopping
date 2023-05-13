@@ -40,7 +40,7 @@ def read_sheet():
 
 
 df = read_sheet()
-df['symbol'] = df['Accident'].apply(lambda a:'circle-x' if a=='x' else 'circle')
+df['symbol'] = df['Vehicle'].map({'Honda - X':'circle-x', 'Honda':'circle', 'Kia':'pentagon'})
 df['color'] = df['Status'].apply(lambda s: 'None' if pd.isna(s) else s).map({'None': 1, 'NO': 0, 'EXPENSIVE': 0, 'SOLD': 0.5})
 px_chart = px.scatter(df, x='Wear', y='Price', trendline='ols', height=500, hover_name='CarNo', hover_data=['Notes', 'Price', 'Mileage', 'Year'], 
           text='CarNo', symbol='symbol', color='color', color_continuous_scale=px.colors.sequential.Bluered
